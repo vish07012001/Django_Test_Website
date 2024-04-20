@@ -2,6 +2,6 @@ from django.urls import path
 from . import views
 
 
-urlpatterns = [   
-    path('',views.emlpoyee),
-]
+urlpatterns = [       
+    path('profile',views.profile, name='profile'),
+    ]

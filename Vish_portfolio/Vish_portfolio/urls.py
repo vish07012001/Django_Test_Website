@@ -16,13 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from . import contact_us
-from . import home_page, about
+# For models.ImageField
+from django.conf.urls.static import static
+from django.conf import settings
+
+# from . import contact_us
+# from . import home_page, about
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('contact_me/', contact_us.contact),
-    path('', home_page.home),
-    path('about_me/', about.about_us),
-    path('employee/',include('employee.urls')),
-]
+    path('admin/', admin.site.urls),    
+    path('',include('employee.urls')),
+    path('',include('index.urls'))
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
