@@ -7,7 +7,7 @@
 
 {% block content %}
 
-{% include "slider.html" %} 
+{% include "slider.html" with sliderdata=sliderdata %} 
 
 <!-- ======= About Us Section ======= -->
 <section id="about-us" class="about-us">
@@ -19,24 +19,13 @@
 
       <div class="row content">
         <div class="col-lg-6" data-aos="fade-right">
-          <h2>Eum ipsam laborum deleniti velitena</h2>
-          <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
+          <h2>{{aboutdata.0.title}}</h2>
+          <img src = "{{aboutdata.0.image.url}}" alt="test_image" style="height: 200px; width: 400px;">
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
           <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
-          </p>
-          <ul>
-            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
-            <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>
-          </ul>
-          <p class="font-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
-          </p>
+            {{aboutdata.0.description}}
+          </p>         
         </div>
       </div>
 
@@ -261,54 +250,17 @@
       </div>
 
       <div class="row no-gutters clients-wrap clearfix" data-aos="fade-up">
-
+        {% for client in clientdata %}
         <div class="col-lg-3 col-md-4 col-6">
+          <a href="{{ client.url}}">
           <div class="client-logo">
-            <img src="{% static "img/clients/client-1.png" %}" class="img-fluid" alt="">
+            <img src="{{ client.image.url}}" class="img-fluid" alt="{{ client.name }}">
           </div>
+          </a>
         </div>
+        {% endfor %}
 
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="client-logo">
-            <img src="{% static "img/clients/client-2.png" %}" class="img-fluid" alt="">
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="client-logo">
-            <img src="{% static "img/clients/client-3.png" %}" class="img-fluid" alt="">
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="client-logo">
-            <img src="{% static "img/clients/client-4.png" %}" class="img-fluid" alt="">
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="client-logo">
-            <img src="{% static "img/clients/client-5.png" %}" class="img-fluid" alt="">
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="client-logo">
-            <img src="{% static "img/clients/client-6.png" %}" class="img-fluid" alt="">
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="client-logo">
-            <img src="{% static "img/clients/client-7.png" %}" class="img-fluid" alt="">
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-4 col-6">
-          <div class="client-logo">
-            <img src="{% static "img/clients/client-8.png" %}" class="img-fluid" alt="">
-          </div>
-        </div>
+       
 
       </div>
 

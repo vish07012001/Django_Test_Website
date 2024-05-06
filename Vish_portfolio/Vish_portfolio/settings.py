@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+# For Messages
+from django.contrib.messages import constants as messages
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'employee',
     'index',
+    'contact',
+    'authentication',
 ]
 
 MIDDLEWARE = [
@@ -76,9 +81,13 @@ WSGI_APPLICATION = 'Vish_portfolio.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "my_first_django_db",
+        "USER": "Vish",
+        "PASSWORD": "Vishva@2001",
+        "HOST": "localhost",
+        "PORT": "3306",
     }
 }
 
@@ -133,5 +142,14 @@ MEDIA_URL = 'media/'
 
 # This is the path where the images will be stored
 MEDIA_ROOT = BASE_DIR / 'media/'
+
+# For Messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'alert-danger',
+    messages.SUCCESS: 'alert-success',
+    messages.INFO: 'alert-info',
+    messages.WARNING: 'alert-warning',
+    messages.DEBUG: 'alert-info',
+}
 
 

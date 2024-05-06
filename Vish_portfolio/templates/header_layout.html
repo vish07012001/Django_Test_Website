@@ -78,6 +78,12 @@
           <li><a href="{% url 'profile' %}">Profile</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="/contact">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'profile' %}">My Profile</a></li>
+          {% else %}
+          <li><a href="{% url 'login' %}">My Account</a></li>
+          {% endif %}
+
 
         </ul>
       </nav><!-- .nav-menu -->

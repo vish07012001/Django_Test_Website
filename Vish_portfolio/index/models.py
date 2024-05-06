@@ -11,3 +11,19 @@ class about(models.Model):
     # This will show the title of the object in the admin panel, otherwise it will show object1, object2, etc.
     def __str__(self):
         return self.title
+    
+class slider(models.Model):
+    title = models.CharField(max_length=30)
+    description = models.TextField(max_length=800)
+    image = models.ImageField(upload_to='slider/')
+
+    def __str__(self):
+        return self.title
+    
+class client(models.Model):
+    name = models.CharField(max_length=100)
+    url = models.CharField(max_length=400)
+    image = models.ImageField(upload_to='client/')
+
+    def __str__(self):
+        return self.name
