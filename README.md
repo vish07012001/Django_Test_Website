@@ -23,7 +23,7 @@ This website is designed to showcase my work and Django skills. It is built usin
 # Installation
 
 1. Clone the repository:
-   git clone https://github.com/username/vish_portfolio.git
+   git clone https://github.com/username/Django_Test_Website.git
 2. Navigate to the project directory:
    cd vish_portfolio
 3. Install the required dependencies:
