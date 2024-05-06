@@ -1,0 +1,37 @@
+
+.blue-line {
+    background-color: #3189e0; /* Your existing blue color */
+    height: 10px; /* The thickness of your blue line */
+    width: 100%; /* Full width of the page */
+    position: absolute;
+    top: 50%; /* Position it at the middle of the page */
+    left: 0;
+    transform: translateY(-50%); /* This will center it vertically */
+}
+
+.bg-custom-info {
+  background-color: rgb(22, 17, 17); 
+}
+.navbar-brand.text-white {
+font-weight: bold;
+}
+.nav-link.text-white{
+    font-weight: bold;
+}
+.btn-outline-success {
+color: #fff;
+border-color: #288ca7; /* This is a green color, you might want to choose a color that fits your red theme */
+background-color: transparent;
+}
+
+.btn-outline-success:hover {
+color: #288ca7;
+background-color: #fff;
+border-color: #288ca7;
+}
+
+.nav-link.text-white:hover {
+color: #ffffff; /* This will turn the text to white on hover, choose the color that fits your theme */
+background-color: #288ca7; /* Bootstrap's default dark shade, adjust as needed */
+border-radius: 5px; /* Optional: to give rounded edges on hover */
+}
